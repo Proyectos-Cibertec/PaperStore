@@ -130,7 +130,8 @@ public class DialogoConfiguracionPremioSorpresa extends JDialog implements Actio
 		premioSorpresa = getPremioSorpresa();
 		
 		if (esCorrecto) {
-			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?");
+			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?",
+					"Seleccionar una opción", JOptionPane.YES_NO_OPTION);
 			
 			if (respuesta == JOptionPane.YES_OPTION) {
 				// Se modifica el número de cliente sorpresa y el premio sorpresa

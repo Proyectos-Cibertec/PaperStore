@@ -222,7 +222,8 @@ public class DialogoMantenimientoModificar extends JDialog implements ActionList
 		precio = getPrecio();
 		
 		if (esCorrecto) {
-			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?");
+			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?",
+					"Seleccionar una opción", JOptionPane.YES_NO_OPTION);
 			
 			if (respuesta == JOptionPane.YES_OPTION) {
 				// Se cambian las dimensiones, gramaje, blancura y/o precio

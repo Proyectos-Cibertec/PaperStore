@@ -82,21 +82,25 @@ public class DialogoConfiguracionDescuentos extends JDialog implements ActionLis
 		txtPorcentaje1.setBounds(112, 8, 86, 20);
 		contentPanel.add(txtPorcentaje1);
 		txtPorcentaje1.setColumns(10);
+		txtPorcentaje1.addActionListener(this);
 		
 		txtPorcentaje2 = new JTextField();
 		txtPorcentaje2.setBounds(112, 33, 86, 20);
 		contentPanel.add(txtPorcentaje2);
 		txtPorcentaje2.setColumns(10);
+		txtPorcentaje2.addActionListener(this);
 		
 		txtPorcentaje3 = new JTextField();
 		txtPorcentaje3.setBounds(112, 58, 86, 20);
 		contentPanel.add(txtPorcentaje3);
 		txtPorcentaje3.setColumns(10);
+		txtPorcentaje3.addActionListener(this);
 		
 		txtPorcentaje4 = new JTextField();
 		txtPorcentaje4.setBounds(112, 83, 86, 20);
 		contentPanel.add(txtPorcentaje4);
 		txtPorcentaje4.setColumns(10);
+		txtPorcentaje4.addActionListener(this);
 		
 		label = new JLabel("%");
 		label.setBounds(208, 11, 46, 14);
@@ -139,7 +143,12 @@ public class DialogoConfiguracionDescuentos extends JDialog implements ActionLis
 			actionPerformedBtnCancelar(e);
 		}
 		
-		if (e.getSource() == btnAceptar) {
+		if (e.getSource() == btnAceptar ||
+			e.getSource() == txtPorcentaje1 ||
+			e.getSource() == txtPorcentaje2 ||
+			e.getSource() == txtPorcentaje3 ||
+			e.getSource() == txtPorcentaje4) {
+			
 			actionPerformedBtnAceptar(e);
 		}
 	}
@@ -166,7 +175,8 @@ public class DialogoConfiguracionDescuentos extends JDialog implements ActionLis
 	
 		// Se cambian los porcentajes
 		if (esCorrecto) {
-			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?");
+			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?",
+					"Seleccionar una opción", JOptionPane.YES_NO_OPTION);
 			
 			if (respuesta == JOptionPane.YES_OPTION) {
 				cambiarPorcentajes(porcentaje1, porcentaje2, porcentaje3, porcentaje4);

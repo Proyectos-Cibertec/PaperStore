@@ -124,7 +124,8 @@ public class DialogoConfiguracionObsequio extends JDialog implements ActionListe
 		
 		// Se guardan los cambios efectuados
 		if (esCorrecto) {
-			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?");
+			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar los cambios efectuados?",
+					"Seleccionar una opción", JOptionPane.YES_NO_OPTION);
 			
 			if (respuesta == JOptionPane.YES_OPTION) {
 				// Se cambia la cantidad obsequiable y el obsequio

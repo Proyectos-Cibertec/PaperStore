@@ -108,7 +108,8 @@ public class DialogoConfiguracionOptima extends JDialog implements ActionListene
 		cantidadTotalOptima = getCantidadTotalOptima();
 		
 		if (esCorrecto) {
-			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar el cambio efectuado?");
+			int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar el cambio efectuado?",
+					"Seleccionar una opción", JOptionPane.YES_NO_OPTION);
 			
 			if (respuesta == JOptionPane.YES_OPTION) {
 				// Se cambia la cantidad total óptima de resmas vendidas

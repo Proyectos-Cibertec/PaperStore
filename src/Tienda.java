@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
@@ -130,7 +132,6 @@ public class Tienda extends JFrame implements ActionListener {
 				try {
 					Tienda frame = new Tienda();
 					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -209,6 +210,8 @@ public class Tienda extends JFrame implements ActionListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		
+		this.setLocationRelativeTo(null); // Centra la ventana
 	}
 
 	// Direcciona eventos de tipo ActionEvent
@@ -250,7 +253,14 @@ public class Tienda extends JFrame implements ActionListener {
 	
 	// Procesa la pulsación del menú item Salir
 	protected void actionPerformedMntmSalir(ActionEvent e) {
-		System.exit(0);
+		
+		// Pide la confirmación del usuario para salir
+		int respuesta = JOptionPane.showConfirmDialog(this, "¿Seguro que desea salir del programa?", 
+				"Seleccionar una opción", JOptionPane.YES_NO_OPTION);
+		
+		if (respuesta == JOptionPane.YES_OPTION) {
+			System.exit(0);
+		}
 	}
 	
 	protected void actionPerformedMntmConsultarPapel(ActionEvent e) {
